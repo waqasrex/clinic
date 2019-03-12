@@ -1,0 +1,102 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'hospital/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'hospital/dist/css/AdminLTE.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'hospital/style.css' %}">
+            <h1>General Hospital</h1>
+            <header class="main-header">
+    <nav class="navbar navbar-static-top">
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <li><a href="{% url 'hospital:index' %}">Home Page</a></li>
+              <li><a href="{% url 'hospital:doctor' %}">Doctor Registraion</a></li>
+              <li><a href="{% url 'hospital:patient' %}">Patient Registraion</a></li>
+              <li><a href="{% url 'hospital:appoint' %}">Appointment Form</a></li>
+              <li><a href="{% url 'hospital:doclist' %}">Doctors List</a></li>
+              <li><a href="{% url 'hospital:patlist' %}">Patients List</a></li>
+              <li><a href="{% url 'hospital:appointlist' %}">Appointment Record</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+        <div class="wrapper">
+            <aside class="main-sidebar">
+    <section class="sidebar">
+        <div class="user-panel">
+            <ul class="sidebar-menu" data-widget="tree">
+              <li class="treeview">
+               <a href="{% url 'hospital:index' %}">
+               <i class="fa fa-files-o"></i>
+               <span>Home</span>
+               </a>
+              </li>
+              <li class="treeview">
+               <a href="{% url 'hospital:doctor' %}">
+               <i class="fa fa-files-o"></i>
+               <span>Doctor Registration</span>
+               </a>
+              </li>
+              <li class="treeview">
+          <a href="{% url 'hospital:patient' %}">
+          <i class="fa fa-files-o"></i>
+          <span>Patient Registration</span>
+              </a>
+</li>
+          <li class="treeview">
+          <a href="{% url 'hospital:appoint' %}">
+                <i class="fa fa-files-o"></i>
+        <span>Appointment Form</span>
+             </a>
+</li>
+          <li class="treeview">
+          <a href="{% url 'hospital:doclist' %}">
+          <i class="fa fa-files-o"></i>
+          <span>Doctors List</span>
+               </a>
+</li>
+          <li class="treeview">
+          <a href="{% url 'hospital:patlist' %}">
+          <i class="fa fa-files-o"></i>
+          <span>Patients List</span>
+           </a>
+</li>
+          <li class="treeview">
+          <a href="{% url 'hospital:appointlist' %}">
+          <i class="fa fa-files-o"></i>
+          <span>Appointment Record</span>
+               </a>
+</li>
+            </ul>
+            </div>
+    </section>
+     </aside>
+           <section class="content">
+            <div class="row">
+                <div class="col-md-6">
+                <div style="margin-left:200px;padding:10px" class="box box-primary">
+                <div class="box-header with-border">
+              <h3 class="box-title">Patient Registraion Form</h3>
+            </div>
+                  <div class="form-group">
+            <form id = "patForm" role="form" action="" method="POST">
+                {% csrf_token %}
+                <label for="nam">Enter Name</label>
+                <input type="text" class="form-control" placeholder="Ahmad" id="nam" name="name">
+                <label for="add">Enter Address</label>
+                <input type="text" class="form-control" placeholder="Islamabad" name="address" id="add">
+                <label for="blood">Enter Blood Group</label>
+                <input type="text" class="form-control" placeholder="Apos" name="blood" id="blood">
+                <label for="phon">Enter Phone</label>
+                <input type="text" class="form-control" id="phon" placeholder="12345" name="phone">
+                <label for="roll">Enter Patient Enroll No</label>
+                <input type="text" class="form-control" placeholder="1" name="enroll" id="roll">
+                <input style="background-color:green" class="btn btn-primary" type="submit" name="submit">
+            </form>
+</div></div></div></div>
+</section>
+</div>
+ <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>H-12</b>
+    </div>
+    <strong><a href="{% url 'hospital:index' %}">Islamabad Clinic</a>.</strong>
+  </footer>
